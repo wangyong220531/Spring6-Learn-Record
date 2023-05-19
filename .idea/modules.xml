@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Spring-IOC-XML/Spring-IOC-XML.iml" filepath="$PROJECT_DIR$/Spring-IOC-XML/Spring-IOC-XML.iml" />
-      <module fileurl="file://$PROJECT_DIR$/spring-first/spring-first.iml" filepath="$PROJECT_DIR$/spring-first/spring-first.iml" />
       <module fileurl="file://$PROJECT_DIR$/spring6.iml" filepath="$PROJECT_DIR$/spring6.iml" />
     </modules>
   </component>
