@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--1、set方法注入-->
+    <bean id="book" class="com.aK103.spring6.iocxml.di.Book">
+        <property name="bname" value="Java高级进阶"></property>
+        <property name="author" value="塔图姆"></property>
+        <!--        <property name="others">-->
+        <!--            <null/>-->
+        <!--        </property>-->
+        <property name="others">
+            <value><![CDATA[a < b]]></value>
+        </property>
+    </bean>
+
+    <!--2、构造器注入-->
+    <bean id="bookConstructor" class="com.aK103.spring6.iocxml.di.Book">
+        <constructor-arg name="bname" value="MySQL高级进阶"></constructor-arg>
+        <constructor-arg name="author" value="蔡徐腾"></constructor-arg>
+    </bean>
+</beans>

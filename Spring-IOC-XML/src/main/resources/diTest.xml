@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+      方式一：引入外部bean
+        1、创建两个类对象: dept和emp
+        2、在emp的bean标签中使用property引入dept的bean
+    -->
+    <bean id="dept" class="com.aK103.spring6.iocxml.diTest.Department">
+        <property name="dname" value="研发部门"></property>
+    </bean>
+    <bean id="emp" class="com.aK103.spring6.iocxml.diTest.Employee">
+        <!--普通属性注入-->
+        <property name="ename" value="卜方浩"></property>
+        <property name="age" value="26"></property>
+        <!--对象类型属性注入
+            private Department department
+        -->
+        <property name="department" ref="dept"></property>
+    </bean>
+
+    <!--
+    方式二：内部bean
+    -->
+    <bean id="dept0" class="com.aK103.spring6.iocxml.diTest.Department">
+        <property name="dname" value="运维部门"></property>
+    </bean>
+    <bean id="emp0" class="com.aK103.spring6.iocxml.diTest.Employee">
+        <!--普通属性注入-->
+        <property name="ename" value="朱大欢"></property>
+        <property name="age" value="26"></property>
+        <!--对象类型属性注入
+            private Department department
+        -->
+        <property name="department" ref="dept"></property>
+    </bean>
+</beans>
