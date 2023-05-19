@@ -37,4 +37,16 @@
             </bean>
         </property>
     </bean>
+
+    <!--方式三：级联赋值-->
+    <bean id="department1" class="com.aK103.spring6.iocxml.diTest.Department">
+        <property name="dname" value="销售部门"></property>
+    </bean>
+    <bean id="emp1" class="com.aK103.spring6.iocxml.diTest.Employee">
+        <property name="ename" value="陆子虚"></property>
+        <property name="age" value="26"></property>
+        <property name="department" ref="department1"></property>
+        <property name="department.dname" value="测试部门"></property>
+    </bean>
+
 </beans>
