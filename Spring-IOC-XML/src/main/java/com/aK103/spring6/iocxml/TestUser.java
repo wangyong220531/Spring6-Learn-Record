@@ -12,6 +12,10 @@ public class TestUser {
 
         //根据类型获取bean
         User user0 = context.getBean(User.class);
-        System.out.print("根据类型获取bean：" + user0);
+        System.out.println("根据类型获取bean：" + user0);
+
+        //根据id和类型获取bean
+        User user1 = context.getBean("user", User.class);
+        System.out.print("根据id和类型获取bean：" + user1);
     }
 }
