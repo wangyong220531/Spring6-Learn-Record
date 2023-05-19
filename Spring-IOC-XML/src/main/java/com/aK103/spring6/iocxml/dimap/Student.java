@@ -1,11 +1,24 @@
-package dimap;
+package com.aK103.spring6.iocxml.dimap;
+
+import java.util.Map;
 
 public class Student {
+
+    private Map<String, Teacher> teacherMap;
+
     private String sid;
     private String sname;
 
     public String getSid() {
         return sid;
+    }
+
+    public Map<String, Teacher> getTeacherMap() {
+        return teacherMap;
+    }
+
+    public void setTeacherMap(Map<String, Teacher> teacherMap) {
+        this.teacherMap = teacherMap;
     }
 
     public void setSid(String sid) {
@@ -22,5 +35,8 @@ public class Student {
 
     public void run() {
         System.out.println(sid + sname);
+        System.out.println(teacherMap);
     }
+
+
 }

@@ -1,4 +1,4 @@
-package dimap;
+package com.aK103.spring6.iocxml.dimap;
 
 public class Teacher {
     private String tid;
@@ -18,5 +18,13 @@ public class Teacher {
 
     public void setTname(String tname) {
         this.tname = tname;
+    }
+
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "tid='" + tid + '\'' +
+                ", tname='" + tname + '\'' +
+                '}';
     }
 }
