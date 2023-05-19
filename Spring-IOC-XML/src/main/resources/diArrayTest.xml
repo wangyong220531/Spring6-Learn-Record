@@ -2,5 +2,20 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
+    <!--数组类型注入-->
+    <bean id="dept" class="com.aK103.spring6.iocxml.diTest.Department">
+        <property name="dname" value="设计部门"></property>
+    </bean>
+    <bean id="emp" class="com.aK103.spring6.iocxml.diTest.Employee">
+        <property name="ename" value="盲僧"></property>
+        <property name="age" value="33"></property>
+        <property name="department" ref="dept"></property>
+        <property name="hobbies">
+            <array>
+                <value>篮球</value>
+                <value>游泳</value>
+                <value>编程</value>
+            </array>
+        </property>
+    </bean>
 </beans>

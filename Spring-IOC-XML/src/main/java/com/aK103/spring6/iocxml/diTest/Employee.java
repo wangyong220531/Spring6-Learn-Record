@@ -1,5 +1,8 @@
 package com.aK103.spring6.iocxml.diTest;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 //员工类
 public class Employee {
     //员工属于某个部门
@@ -7,6 +10,16 @@ public class Employee {
 
     private String ename;
     private Integer age;
+
+    private String[] hobbies;
+
+    public String[] getHobbies() {
+        return hobbies;
+    }
+
+    public void setHobbies(String[] hobbies) {
+        this.hobbies = hobbies;
+    }
 
     public Department getDepartment() {
         return department;
@@ -44,5 +57,6 @@ public class Employee {
     public void work() {
         System.out.println("员工" + ename + "正在工作！他的年龄是：" + age);
         department.info();
+        System.out.println(Arrays.toString(hobbies));
     }
 }
