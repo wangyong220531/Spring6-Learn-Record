@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--
+    一、创建三个对象
+    二、注入普通类型属性
+    三、使用util:类型 定义
+    四、在学生bean中引入util: 类型定义bean，完成list、map类型属性的注入
+    -->
+    <bean id="student" class="com.aK103.spring6.iocxml.dimap.Student">
+        <property name="sid" value="s00"></property>
+        <property name="sname" value="Jordan"></property>
+        <!--注入list、map类型属性-->
+        <property name="lessonList" ref="lessonList"></property>
+        <property name="teacherMap" ref="teacherMap"></property>
+    </bean>
+
+    <util:list id="lessonList">
+        <ref bean="lesson1st"></ref>
+        <ref bean="lesson2nd"></ref>
+    </util:list>
+    <util:map id="teacherMap">
+        <entry>
+            <key>
+                <value>t000</value>
+            </key>
+            <ref bean="teacher1st"></ref>
+        </entry>
+        <entry>
+            <key>
+                <value>t001</value>
+            </key>
+            <ref bean="teacher2nd"></ref>
+        </entry>
+    </util:map>
+
+    <bean id="lesson1st" class="com.aK103.spring6.iocxml.dimap.Lesson">
+        <property name="lessonName" value="Java SE"></property>
+    </bean>
+    <bean id="lesson2nd" class="com.aK103.spring6.iocxml.dimap.Lesson">
+        <property name="lessonName" value="Java EE"></property>
+    </bean>
+
+    <bean id="teacher1st" class="com.aK103.spring6.iocxml.dimap.Teacher">
+        <property name="tid" value="t00"></property>
+        <property name="tname" value="特雷·杨"></property>
+    </bean>
+    <bean id="teacher2nd" class="com.aK103.spring6.iocxml.dimap.Teacher">
+        <property name="tid" value="t01"></property>
+        <property name="tname" value="维金斯"></property>
+    </bean>
+</beans>
